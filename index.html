@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINEARNE - Cinema Online</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <input type="checkbox" id="abrir-modal" class="check-controle">
+    <input type="checkbox" id="abrir-assentos" class="check-controle">
+    <input type="checkbox" id="abrir-sucesso" class="check-controle">
+
+    <header>
+        <h1 class="logo">CINEARNE</h1>
+        <div class="right-area">
+            <div class="search-container">
+                <input type="text" id="busca" oninput="filtrar()" placeholder="Pesquisar filme...">
+            </div>
+            
+            <div id="area-perfil" style="display: flex; gap: 15px; align-items: center;">
+                <a href="index.html" class="nav-icon"><i class="fa-solid fa-house"></i></a>
+                <div id="conteudo-login">
+                    <a href="login.html" class="nav-icon"><i class="fa-solid fa-user"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="movies">
+        <label for="abrir-modal" class="movie-card" data-nome="avengers secret war vingadores marvel ação">
+            <div class="poster-container">
+                <img src="img/Avengers.png" alt="Avengers: Secret War">
+                <span class="badge-prevenda"><i class="fa-solid fa-fire"></i> PRÉ-VENDA</span>
+            </div>
+            <div class="movie-info"><h3>AVENGERS: SECRET WAR</h3><div class="details"><span>Ação • 160m</span><span class="age">14</span></div></div>
+        </label>
+
+        <label for="abrir-modal" class="movie-card" data-nome="spider-man além do aranhaverso miles morales animação">
+            <div class="poster-container">
+                <img src="img/Beyond.jpg" alt="Beyond the Spider-Verse">
+                <span class="badge-prevenda"><i class="fa-solid fa-fire"></i> PRÉ-VENDA</span>
+            </div>
+            <div class="movie-info"><h3>SPIDER-MAN: ALÉM DO ARANHAVERSO</h3><div class="details"><span>Animação • 130m</span><span class="age">10</span></div></div>
+        </label>
+
+        <label for="abrir-modal" class="movie-card" data-nome="mário galaxy mario nintendo animação">
+            <div class="poster-container">
+                <img src="img/Mário.jpg" alt="Mário Galaxy">
+                <span class="badge-prevenda"><i class="fa-solid fa-fire"></i> PRÉ-VENDA</span>
+            </div>
+            <div class="movie-info"><h3>MÁRIO GALAXY</h3><div class="details"><span>Animação • 110m</span><span class="age">L</span></div></div>
+        </label>
+
+        <label for="abrir-modal" class="movie-card" data-nome="mortal kombat mk luta ação">
+            <div class="poster-container">
+                <img src="img/MortalKombat.png" alt="Mortal Kombat">
+                <span class="badge-prevenda"><i class="fa-solid fa-fire"></i> PRÉ-VENDA</span>
+            </div>
+            <div class="movie-info"><h3>MORTAL KOMBAT</h3><div class="details"><span>Ação • 125m</span><span class="age">16</span></div></div>
+        </label>
+
+        <label for="abrir-modal" class="movie-card" data-nome="shrek 5 ogro animação dreamworks">
+            <div class="poster-container">
+                <img src="img/Shrek5.png" alt="Shrek 5">
+                <span class="badge-prevenda"><i class="fa-solid fa-fire"></i> PRÉ-VENDA</span>
+            </div>
+            <div class="movie-info"><h3>SHREK 5</h3><div class="details"><span>Animação • 105m</span><span class="age">L</span></div></div>
+        </label>
+
+        <label for="abrir-modal" class="movie-card" data-nome="spider-man homem aranha um novo dia live action marvel">
+            <div class="poster-container">
+                <img src="img/SpiderMan.png" alt="Spider-Man: Um Novo Dia">
+                <span class="badge-prevenda"><i class="fa-solid fa-fire"></i> PRÉ-VENDA</span>
+            </div>
+            <div class="movie-info"><h3>SPIDER-MAN: UM NOVO DIA</h3><div class="details"><span>Ação • 145m</span><span class="age">12</span></div></div>
+        </label>
+
+        <label for="abrir-modal" class="movie-card" data-nome="toy story 5 woody buzz animação pixar disney">
+            <div class="poster-container">
+                <img src="img/ToyStory.png" alt="Toy Story 5">
+                <span class="badge-prevenda"><i class="fa-solid fa-fire"></i> PRÉ-VENDA</span>
+            </div>
+            <div class="movie-info"><h3>TOY STORY 5</h3><div class="details"><span>Animação • 115m</span><span class="age">L</span></div></div>
+        </label>
+
+        <label for="abrir-modal" class="movie-card" data-nome="vingadores doomsday avengers doutor destino marvel ação">
+            <div class="poster-container">
+                <img src="img/Vingadores.jpeg" alt="Vingadores: Doomsday">
+                <span class="badge-prevenda"><i class="fa-solid fa-fire"></i> PRÉ-VENDA</span>
+            </div>
+            <div class="movie-info"><h3>VINGADORES: DOOMSDAY</h3><div class="details"><span>Ação • 165m</span><span class="age">14</span></div></div>
+        </label>
+    </section>
+
+    <div class="modal-sessao">
+        <div class="conteudo-sessao">
+            <label for="abrir-modal" class="fechar-modal">&times;</label>
+            <h2>SELECIONE O HORÁRIO</h2>
+            <div class="grade-horarios">
+                <label for="abrir-assentos" class="btn-hora">14h00</label>
+                <label for="abrir-assentos" class="btn-hora">17h30</label>
+                <label for="abrir-assentos" class="btn-hora">21h00</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-assentos">
+        <div class="conteudo-assentos">
+            <label for="abrir-assentos" class="fechar-modal">&times;</label>
+            <h3 class="titulo-modal">Escolha seu Assento</h3>
+            <div class="tela-cinema">TELA</div>
+            <div class="mapa-assentos">
+                <input type="checkbox" id="a1" class="seat-check"><label for="a1" class="seat"></label>
+                <input type="checkbox" id="a2" class="seat-check"><label for="a2" class="seat"></label>
+                <input type="checkbox" id="a3" class="seat-check"><label for="a3" class="seat"></label>
+                <input type="checkbox" id="a4" class="seat-check"><label for="a4" class="seat"></label>
+                <div class="corredor"></div>
+                <input type="checkbox" id="a5" class="seat-check"><label for="a5" class="seat"></label>
+                <input type="checkbox" id="a6" class="seat-check"><label for="a6" class="seat"></label>
+                <input type="checkbox" id="a7" class="seat-check"><label for="a7" class="seat"></label>
+                <input type="checkbox" id="a8" class="seat-check"><label for="a8" class="seat"></label>
+                <input type="checkbox" id="b1" class="seat-check"><label for="b1" class="seat"></label>
+                <input type="checkbox" id="b2" class="seat-check"><label for="b2" class="seat"></label>
+                <input type="checkbox" id="b3" class="seat-check"><label for="b3" class="seat"></label>
+                <input type="checkbox" id="b4" class="seat-check"><label for="b4" class="seat"></label>
+                <div class="corredor"></div>
+                <input type="checkbox" id="b5" class="seat-check"><label for="b5" class="seat"></label>
+                <input type="checkbox" id="b6" class="seat-check"><label for="b6" class="seat"></label>
+                <input type="checkbox" id="b7" class="seat-check"><label for="b7" class="seat"></label>
+                <input type="checkbox" id="b8" class="seat-check"><label for="b8" class="seat"></label>
+            </div>
+            <label for="abrir-sucesso" class="btn-confirmar">CONFIRMAR ASSENTOS</label>
+        </div>
+    </div>
+
+    <div class="modal-sucesso">
+        <div class="conteudo-sucesso">
+            <i class="fa-solid fa-circle-check" style="color: #44ff44; font-size: 60px; margin-bottom: 20px;"></i>
+            <h2>SUCESSO!</h2>
+            <div class="ticket-info" style="margin-bottom: 20px; color: white;">
+                <p><strong>Total:</strong> R$ 0,00</p>
+                <p><strong>Tipo:</strong> Cortesia Estudante 🎓</p>
+            </div>
+            <a href="index.html" id="link-voltar" class="btn-confirmar" style="text-decoration: none; display: inline-block;">VOLTAR AO INÍCIO</a>
+        </div>
+    </div>
+
+    <script>
+        // Sistema de busca
+        function filtrar() {
+            let input = document.getElementById('busca').value.toLowerCase();
+            let cards = document.querySelectorAll('.movie-card');
+            cards.forEach(card => {
+                let nome = card.getAttribute('data-nome');
+                card.style.display = nome.includes(input) ? "block" : "none";
+            });
+        }
+
+        // Lógica de usuário na URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const userName = urlParams.get('user');
+        const conteudoLogin = document.getElementById('conteudo-login');
+        const linkVoltar = document.getElementById('link-voltar');
+
+        if (userName) {
+            conteudoLogin.innerHTML = `
+                <div class="user-logado" style="display: flex; align-items: center; gap: 10px;">
+                    <span style="color: #F2D388; font-weight: bold;">Olá, ${userName}!</span>
+                    <a href="index.html" class="nav-icon" title="Sair"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+            `;
+            // Atualiza o link de voltar para manter o usuário logado
+            if(linkVoltar) linkVoltar.href = `index.html?user=${userName}`;
+        }
+    </script>
+</body>
+</html>

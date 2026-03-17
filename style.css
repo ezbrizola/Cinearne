@@ -1,0 +1,154 @@
+/* --- RESET E BASE --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background-color: #0a0a0a; font-family: 'League Spartan', sans-serif; color: white; overflow-x: hidden; }
+.check-controle { display: none; }
+
+/* --- HEADER --- */
+header {
+    background: linear-gradient(to right, #ff0000, #330000) !important;
+    padding: 15px 5%; display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 2px solid #F2D388; position: sticky; top: 0; z-index: 1000;
+}
+.logo { color: #F2D388; font-size: 35px; font-weight: bold; text-decoration: none; }
+.right-area { display: flex; align-items: center; gap: 20px; }
+
+/* Barra de Busca */
+.search-container input {
+    padding: 10px 18px; border-radius: 25px; border: 1px solid #F2D388;
+    background: rgba(0,0,0,0.5); color: white; outline: none; transition: 0.3s;
+}
+.search-container input:focus { box-shadow: 0 0 15px #F2D388; width: 250px; }
+
+/* Ícones de Navegação */
+.nav-icon { color: #F2D388; font-size: 24px; text-decoration: none; transition: 0.3s; cursor: pointer; }
+.nav-icon:hover { transform: scale(1.2); color: white; }
+
+/* Pílula do Usuário Logado */
+.user-logado {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 25px;
+    border: 1px solid rgba(242, 211, 136, 0.3);
+}
+
+/* --- GRID DE FILMES --- */
+.movies { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; padding: 60px 8%; }
+.movie-card {
+    background: #1a1a1a; border-radius: 12px; overflow: hidden;
+    cursor: pointer; transition: 0.4s; border: 1px solid transparent; position: relative;
+    display: block;
+}
+.movie-card:hover { transform: translateY(-10px); border-color: #ff0000; box-shadow: 0 0 20px #ff0000; }
+.movie-card img { width: 100%; display: block; aspect-ratio: 2/3; object-fit: cover; }
+.badge-prevenda { position: absolute; top: 15px; left: 0; background: #ff0000; padding: 5px 12px; font-size: 11px; font-weight: bold; }
+.movie-info { padding: 15px; }
+.details { display: flex; justify-content: space-between; align-items: center; color: #F2D388; margin-top: 10px; }
+.age { background: #F2D388; color: black; padding: 2px 8px; border-radius: 4px; font-weight: bold; }
+
+/* --- MODAIS --- */
+.modal-sessao, .modal-assentos, .modal-sucesso {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9); justify-content: center; align-items: center;
+    backdrop-filter: blur(8px);
+}
+/* Camadas dos modais */
+.modal-sessao { z-index: 5000; }
+.modal-assentos { z-index: 5100; }
+.modal-sucesso { z-index: 5200; }
+
+#abrir-modal:checked ~ .modal-sessao,
+#abrir-assentos:checked ~ .modal-assentos,
+#abrir-sucesso:checked ~ .modal-sucesso { display: flex; }
+
+.conteudo-sessao, .conteudo-assentos, .conteudo-sucesso {
+    background: #121212; padding: 40px; border-radius: 20px; border: 2px solid #ff0000;
+    text-align: center; position: relative; width: 90%; max-width: 480px;
+}
+.fechar-modal { position: absolute; right: 20px; top: 10px; font-size: 35px; color: #F2D388; cursor: pointer; }
+
+/* --- BOTÕES E ASSENTOS --- */
+.grade-horarios { display: flex; gap: 15px; justify-content: center; margin-top: 20px; }
+.btn-hora { 
+    display: inline-block; border: 1px solid #F2D388; color: #F2D388; 
+    padding: 12px 25px; border-radius: 5px; cursor: pointer; transition: 0.3s; 
+}
+.btn-hora:hover { background: #F2D388; color: black; font-weight: bold; }
+
+.tela-cinema { width: 80%; margin: 0 auto 35px auto; border-bottom: 3px solid #fff; box-shadow: 0 8px 15px rgba(255,255,255,0.3); color: #888; }
+.mapa-assentos { display: grid; grid-template-columns: repeat(4, 32px) 25px repeat(4, 32px); gap: 8px; justify-content: center; margin-bottom: 30px; }
+.corredor { width: 25px; }
+.seat-check { display: none; }
+.seat { width: 32px; height: 32px; background: #3a3a3a; border-radius: 6px; cursor: pointer; }
+.seat-check:checked + .seat { background: #ff0000; border: 1px solid white; }
+
+.btn-confirmar { background: #ff0000; color: white; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; border: none; width: 100%; }
+.ticket-info { background: #222; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 6px solid #44ff44; text-align: left; }
+
+/* --- LOGIN --- */
+.body-login {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070') no-repeat center center/cover;
+    height: 100vh;
+}
+.main-login { height: calc(100vh - 80px); display: flex; justify-content: center; align-items: center; }
+.card-login { background: #121212; padding: 40px; border-radius: 20px; border: 2px solid #ff0000; width: 100%; max-width: 400px; text-align: center; }
+.input-group { position: relative; margin-bottom: 20px; }
+.input-group i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #F2D388; }
+.input-group input { width: 100%; padding: 15px 15px 15px 45px; background: #1a1a1a; border: 1px solid #333; border-radius: 8px; color: white; outline: none; }
+.btn-entrar { width: 100%; padding: 15px; background: #ff0000; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+.footer-login { margin-top: 25px; font-size: 14px; }
+.footer-login a { color: #F2D388; text-decoration: none; }
+
+/* --- RESPONSIVIDADE (CELULAR) --- */
+
+@media (max-width: 768px) {
+    /* 1. Ajusta o Topo (Header) */
+    header {
+        flex-direction: column; /* Coloca a logo em cima e a busca embaixo */
+        gap: 15px;
+        padding: 15px;
+        height: auto; /* Deixa o header crescer se precisar */
+    }
+
+    .right-area {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .search-container {
+        width: 100%; /* Busca ocupa a largura toda no celular */
+    }
+
+    .search-container input {
+        width: 100%;
+    }
+
+    /* 2. Ajusta a Grade de Filmes */
+    .movies {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 2 filmes por linha */
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .movie-card h3 {
+        font-size: 0.9rem; /* Diminui um pouco o texto do título */
+    }
+
+    /* 3. Ajusta os Modais (Janelas) */
+    .conteudo-sessao, .conteudo-assentos, .conteudo-sucesso {
+        width: 95%; /* Quase a tela toda */
+        padding: 15px;
+        max-height: 90vh;
+        overflow-y: auto; /* Permite rolar se o celular for muito pequeno */
+    }
+
+    /* 4. Mapa de Assentos */
+    .mapa-assentos {
+        gap: 5px; /* Diminui o espaço entre as poltronas */
+    }
+
+    .seat {
+        width: 25px;
+        height: 25px;
+    }
+}
